@@ -1,0 +1,47 @@
+{
+  "name": "campusly",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "node --env-file=.env node_modules/tsx/dist/cli.mjs server/index.ts",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:seed": "tsx prisma/seed.ts",
+    "dev:full": "concurrently \"npm run dev:api\" \"vite\"",
+    "build": "prisma generate && vite build",
+    "start": "node --env-file=.env node_modules/tsx/dist/cli.mjs server/index.ts"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "@prisma/client": "6.17.1",
+    "bcryptjs": "latest",
+    "concurrently": "latest",
+    "cors": "latest",
+    "express": "latest",
+    "framer-motion": "latest",
+    "iconv-lite": "^0.6.3",
+    "jsonwebtoken": "latest",
+    "lucide-react": "latest",
+    "object-inspect": "^1.13.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "react-router-dom": "latest",
+    "rxjs": "^7.8.2",
+    "tsx": "latest",
+    "vite": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/cors": "latest",
+    "@types/express": "latest",
+    "@types/jsonwebtoken": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "postcss": "^8.4.49",
+    "prisma": "6.17.1",
+    "typescript": "latest"
+  }
+}
