@@ -2,6 +2,7 @@ services:
   - type: web
     name: campusly
     runtime: node
+    plan: free
     buildCommand: npm ci && npm run build
     preDeployCommand: npx prisma migrate deploy
     startCommand: npm start
@@ -18,3 +19,4 @@ services:
 
 databases:
   - name: campusly-db
+    plan: free
