@@ -3,7 +3,7 @@ services:
     name: campusly
     runtime: node
     plan: free
-    buildCommand: npm ci && npx prisma generate && npx prisma migrate deploy && npm run build
+    buildCommand: npm ci && npx prisma generate && npx prisma migrate deploy && npx prisma db seed && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
